@@ -60,7 +60,7 @@
         "timestampUrl": "",
         "tsp": false,
         "webviewInstallMode": {
-          "type": "downloadBootstrapper"
+          "type": "offlineInstaller"
         },
         "wix": {
           "language": ["en-US"]
