@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "bash build-backend.sh && npm run build",
+    "beforeBuildCommand": "node prebuild.js",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": false
