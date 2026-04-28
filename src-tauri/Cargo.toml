@@ -18,27 +18,9 @@ tauri = { version = "1.6", features = [
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
-# Win 7 対応 (Rust 1.75) のため edition 2024 (Rust 1.85+) 要求の transitive crate を
-# 直接 dependency に列挙して resolver に古いバージョンを選ばせる
-time = "=0.3.36"
-litemap = "=0.7.5"
-zerovec = "=0.10.4"
-zerovec-derive = "=0.10.3"
-icu_collections = "=1.5.0"
-icu_locid = "=1.5.0"
-icu_locid_transform = "=1.5.0"
-icu_locid_transform_data = "=1.5.0"
-icu_normalizer = "=1.5.0"
-icu_normalizer_data = "=1.5.0"
-icu_properties = "=1.5.1"
-icu_properties_data = "=1.5.0"
-icu_provider = "=1.5.0"
-icu_provider_macros = "=1.5.0"
-tinystr = "=0.7.6"
-yoke = "=0.7.5"
-yoke-derive = "=0.7.5"
-zerofrom = "=0.1.6"
-zerofrom-derive = "=0.1.6"
+# Win 7 対応は Rust 公式の Tier 3 ターゲット x86_64-win7-windows-msvc を使う
+# (stable + `rustup target add x86_64-win7-windows-msvc` で利用可能)
+# このターゲットは ProcessPrng の代わりに RtlGenRandom を使うため Win 7 で動く
 
 [features]
 default = ["custom-protocol"]
